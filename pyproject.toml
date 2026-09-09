@@ -1,0 +1,43 @@
+[project]
+name = "automatedtest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "black>=26.5.1",
+    "dotenv>=0.9.9",
+    "isort>=9.0.1",
+    "pydantic>=2.13.5",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-html>=4.2.0",
+    "pytest-playwright>=0.9.0",
+    "python-dotenv>=1.2.3",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "rebalancing: Rebalancing tests",
+    "TC_REBAL_001: Validate target share percentages post rebalance",
+    "TC_REBAL_002: Validate deviation percentage post rebalance",
+    "TC_REBAL_003: Validate total number of shares post rebalance",
+    "TC_REBAL_004: Validate company names after allocation",
+    "TC_REBAL_005: Validate correct calculation of units to buy sell",
+    "TC_REBAL_006: Validate unchanged allocations post rebalance",
+    "TC_REBAL_007: Validate total investment amount preservation",
+    "TC_REBAL_008: Validate that a bad request is returned with incorrect security names",
+    "TC_REBAL_009: Test to validate that a bad request is returned",
+    "TC_REBAL_010: Post rebalance empty payload bad request",
+    "TC_REBAL_011: Unauthorized access to rebalance functionality",
+    "TC_REBAL_012: Validate float precision of shares",
+    "TC_REBAL_013: No change payload matches initial rebalance",
+    "TC_REBAL_014: Boundary value for 100 percent target allocation",
+    "HIGH: High priority tests",
+    "MEDIUM: Medium priority tests",
+]
+
+log_cli = true
+log_cli_level = "INFO"
