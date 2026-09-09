@@ -37,6 +37,11 @@ markers = [
     "TC_REBAL_014: Boundary value for 100 percent target allocation",
     "HIGH: High priority tests",
     "MEDIUM: Medium priority tests",
+    "CoreFunctional: Core functional tests",
+    "NegativeScenario: Negative scenario tests",
+    "SystemRecovery: System recovery tests",
+    "MathIntegrity: Math integrity validation tests",
+    "Boundary: Boundary value tests",
 ]
 
 log_cli = true

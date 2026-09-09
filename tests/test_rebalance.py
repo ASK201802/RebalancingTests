@@ -8,6 +8,7 @@ from utility.trade_comparators import compare_shares_bought_sold, compare_total_
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
 @pytest.mark.HIGH
+@pytest.mark.CoreFunctional
 @pytest.mark.TC_REBAL_001
 async def test_correct_calculation_of_units_to_buy_sell(api_context):
     """
@@ -24,6 +25,7 @@ async def test_correct_calculation_of_units_to_buy_sell(api_context):
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
 @pytest.mark.HIGH
+@pytest.mark.CoreFunctional
 @pytest.mark.TC_REBAL_002
 async def test_validate_target_share_percentages_post_rebalance(api_context):
     """
@@ -45,6 +47,7 @@ async def test_validate_target_share_percentages_post_rebalance(api_context):
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
 @pytest.mark.HIGH
+@pytest.mark.CoreFunctional
 @pytest.mark.TC_REBAL_003
 async def test_validate_deviation_percentage_post_rebalance(api_context):
     """
@@ -66,6 +69,7 @@ async def test_validate_deviation_percentage_post_rebalance(api_context):
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
 @pytest.mark.HIGH
+@pytest.mark.CoreFunctional
 @pytest.mark.TC_REBAL_004
 async def test_validate_total_number_of_shares_post_rebalance(api_context):
     """
@@ -83,6 +87,7 @@ async def test_validate_total_number_of_shares_post_rebalance(api_context):
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
 @pytest.mark.HIGH
+@pytest.mark.CoreFunctional
 @pytest.mark.TC_REBAL_005
 async def test_validate_company_names_after_allocation(api_context):
     """
@@ -99,6 +104,7 @@ async def test_validate_company_names_after_allocation(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.CoreFunctional
 @pytest.mark.HIGH
 @pytest.mark.TC_REBAL_006
 async def test_validate_unchanged_allocations_post_rebalance(api_context):
@@ -121,6 +127,7 @@ async def test_validate_unchanged_allocations_post_rebalance(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.CoreFunctional
 @pytest.mark.HIGH
 @pytest.mark.TC_REBAL_007
 async def test_validate_total_investment_amount_preservation(api_context):
@@ -138,6 +145,7 @@ async def test_validate_total_investment_amount_preservation(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.NegativeScenario
 @pytest.mark.MEDIUM
 @pytest.mark.TC_REBAL_008
 async def test_post_rebalance_wrong_security_name_bad_request(api_context):
@@ -151,6 +159,7 @@ async def test_post_rebalance_wrong_security_name_bad_request(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.SystemRecovery
 @pytest.mark.MEDIUM
 @pytest.mark.TC_REBAL_009
 async def test_post_rebalance_failure_then_success(api_context):
@@ -168,6 +177,7 @@ async def test_post_rebalance_failure_then_success(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.NegativeScenario
 @pytest.mark.MEDIUM
 @pytest.mark.TC_REBAL_010
 async def test_post_rebalance_empty_payload_bad_request(api_context):
@@ -182,6 +192,7 @@ async def test_post_rebalance_empty_payload_bad_request(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.NegativeScenario
 @pytest.mark.HIGH
 @pytest.mark.TC_REBAL_011
 async def test_unauthorized_access_to_rebalance_functionality(api_context_invalid_token):
@@ -200,6 +211,7 @@ async def test_unauthorized_access_to_rebalance_functionality(api_context_invali
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.MathIntegrity
 @pytest.mark.MEDIUM
 @pytest.mark.TC_REBAL_012
 async def test_validate_float_precision_of_shares(api_context):
@@ -223,6 +235,7 @@ async def test_validate_float_precision_of_shares(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.Boundary
 @pytest.mark.MEDIUM
 @pytest.mark.TC_REBAL_013
 async def test_no_change_payload_matches_initial_rebalance(api_context):
@@ -244,6 +257,7 @@ async def test_no_change_payload_matches_initial_rebalance(api_context):
 
 @pytest.mark.asyncio
 @pytest.mark.rebalancing
+@pytest.mark.Boundary
 @pytest.mark.TC_REBAL_014
 @pytest.mark.MEDIUM
 async def test_boundary_value_for_100_percent_target_allocation(api_context):
